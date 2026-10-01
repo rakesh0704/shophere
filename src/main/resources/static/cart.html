@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2>🛒 ShopHere</h2>
+
+    <div>
+
+        <span id="welcomeUser"></span>
+
+        <button onclick="window.location.href='products.html'">
+            Products
+        </button>
+
+        <button onclick="window.location.href='wishlist.html'">
+            Wishlist
+        </button>
+
+        <button onclick="window.location.href='cart.html'">
+            Cart
+        </button>
+
+        <button onclick="window.location.href='orders.html'">
+            Orders
+        </button>
+
+        <button onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+</nav>
+
+<h2 class="title">
+
+    Shopping Cart
+
+</h2>
+
+<div class="page-container">
+
+    <div id="cart"></div>
+
+<div id="cartTotal"></div>
+
+</div>
+
+<div style="text-align:center">
+
+    <div id="checkoutSection">
+
+    <button
+        onclick="window.location.href='checkout.html'">
+
+        Proceed To Checkout
+
+    </button>
+
+</div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Products - ShopHere</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+<div id="toast"></div>
+
+<nav>
+
+    <h2>🛒 ShopHere</h2>
+
+    <div>
+
+        <span id="welcomeUser"></span>
+
+        <button onclick="window.location.href='products.html'">
+            Products
+        </button>
+
+        <button onclick="window.location.href='wishlist.html'">
+            Wishlist
+        </button>
+
+        <button onclick="window.location.href='cart.html'">
+            Cart
+        </button>
+
+        <button onclick="window.location.href='orders.html'">
+            Orders
+        </button>
+
+        <button onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+</nav>
+<h2 class="title">
+
+    Products
+
+</h2>
+
+<div class="search-box">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search products..."
+        onkeyup="searchProducts()">
+
+    <select
+        id="categoryFilter"
+        onchange="filterCategory()">
+
+        <option value="all">
+
+            All Categories
+
+        </option>
+
+    </select>
+
+    <select
+        id="sortProducts"
+        onchange="sortProducts()">
+
+        <option value="default">
+            Sort By
+        </option>
+
+        <option value="lowToHigh">
+            Price Low to High
+        </option>
+
+        <option value="highToLow">
+            Price High to Low
+        </option>
+
+    </select>
+
+</div>
+
+<div id="loader">
+
+    Loading Products...
+
+</div>
+
+<div id="products"></div>
+
+<div id="pagination"></div>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
