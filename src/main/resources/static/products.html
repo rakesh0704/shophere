@@ -37,7 +37,14 @@
         <button onclick="window.location.href='orders.html'">
             Orders
         </button>
+        <button
+    id="adminBtn"
+    onclick="window.location.href='admin.html'"
+    style="display:none;">
 
+    Admin
+
+</button>
         <button onclick="logout()">
             Logout
         </button>
@@ -71,23 +78,37 @@
 
     </select>
 
-    <select
-        id="sortProducts"
-        onchange="sortProducts()">
+   <select
+    id="sortProducts"
+    onchange="sortProducts()">
 
-        <option value="default">
-            Sort By
-        </option>
+    <option value="default">
+    Sort Results
+</option>
+    <option value="lowToHigh">
+        Price: Low to High
+    </option>
 
-        <option value="lowToHigh">
-            Price Low to High
-        </option>
+    <option value="highToLow">
+        Price: High to Low
+    </option>
 
-        <option value="highToLow">
-            Price High to Low
-        </option>
+    <option value="ratingHigh">
+        Rating: High to Low
+    </option>
 
-    </select>
+    <option value="ratingLow">
+        Rating: Low to High
+    </option>
+
+</select>
+<button
+    class="reset-btn"
+    onclick="resetProducts()">
+
+    Clear Filters
+
+</button>
 
 </div>
 

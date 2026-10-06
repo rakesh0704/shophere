@@ -1,0 +1,81 @@
+    <!DOCTYPE html>
+
+    <html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Payment</title>
+
+        <link rel="stylesheet"
+            href="style.css">
+
+    </head>
+
+    <body>
+        <div id="toast"></div>
+    <nav>
+
+        <h2>🛒 ShopHere</h2>
+
+    </nav>
+
+    <div class="auth-container">
+
+        <div class="auth-box">
+
+        <h2>
+            Scan & Pay
+        </h2>
+        <div id="qrCode"></div>
+    <p>
+UPI ID:
+8688572958@ibl
+</p>
+<h3 id="paymentAmount">
+</h3>
+
+       <h3>
+    Choose Payment Method
+</h3>
+
+<div class="payment-method">
+
+    <label class="method-option">
+
+        <input
+            type="radio"
+            name="payMethod"
+            checked>
+
+        📱 UPI Payment
+
+    </label>
+
+    <label class="method-option">
+
+        <input
+            type="radio"
+            name="payMethod">
+
+        📦 Cash On Delivery
+
+    </label>
+
+</div>
+
+        <button
+            onclick="completePayment()">
+
+            Payment Done
+
+        </button>
+
+    </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="app.js"></script>
+
+    </body>
+
+    </html>

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-
+<div id="toast"></div>
 <nav>
 
     <h2>🛒 ShopHere</h2>
@@ -35,7 +35,14 @@
         <button onclick="window.location.href='orders.html'">
             Orders
         </button>
+        <button
+    id="adminBtn"
+    onclick="window.location.href='admin.html'"
+    style="display:none;">
 
+    Admin
+
+</button>
         <button onclick="logout()">
             Logout
         </button>
@@ -57,24 +64,29 @@
         placeholder="Name">
 
     <input
-        type="email"
-        id="customerEmail"
-        placeholder="Email">
+    id="customerEmail"
+    type="email"
+    placeholder="📧 Email Address">
 
-    <input
-        type="text"
-        id="customerPhone"
-        placeholder="Phone">
+<input
+    id="customerPhone"
+    type="tel"
+    maxlength="10"
+    pattern="[0-9]{10}"
+    placeholder="📱 Mobile Number (10 Digits)"
+    required>
 
-    <textarea
-        id="customerAddress"
-        placeholder="Address">
-    </textarea>
+<textarea
+    id="customerAddress"
+    placeholder="🏠 Delivery Address">
+</textarea>
 
-    <button onclick="placeOrder()">
-        Confirm Order
-    </button>
+<button
+    onclick="goToPayment()">
 
+    Proceed To Payment
+
+</button>
 </div>
 
 <script src="app.js"></script>

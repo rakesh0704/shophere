@@ -10,7 +10,7 @@
 </head>
 
 <body>
-
+<div id="toast"></div>
 <nav>
 
     <h2>🛒 ShopHere</h2>
@@ -24,7 +24,7 @@
     <input
         type="text"
         id="regUsername"
-        placeholder="Username">
+        placeholder="👤 Full Name">
 
     <input
         type="email"
@@ -32,10 +32,20 @@
         placeholder="Email">
 
     <input
-        type="password"
-        id="regPassword"
-        placeholder="Password">
+    type="password"
+    id="regPassword"
+    placeholder="🔒 Password">
+    <small id="passwordError"></small>
+        <small id="passwordHint">
 
+    Password must contain:
+
+    1 Capital Letter,
+    1 Small Letter,
+    1 Number,
+    1 Special Character
+
+</small>
     <button onclick="registerUser()">
         Register
     </button>

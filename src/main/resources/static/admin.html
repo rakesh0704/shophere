@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html>
+    <script>
 
+    const email =
+        localStorage.getItem(
+            "email"
+        );
+
+    if(email !== "admin@gmail.com"){
+
+        window.location.href =
+            "products.html";
+    }
+
+</script>
 <head>
     <meta charset="UTF-8">
     <title>Admin Dashboard</title>
@@ -11,13 +24,120 @@
 </head>
 
 <body>
+<div id="toast"></div>
+<nav class="admin-navbar">
+    <button
+class="back-store-btn"
+onclick="window.location.href='products.html'">
+← Back to Store
+</button>
+<button
+    id="adminBtn"
+    onclick="window.location.href='admin.html'"
+    style="display:none;">
 
-<nav>
+    Admin
 
-    <h2>🛒 ShopHere Admin</h2>
+</button>
+    <div>
+
+        <h1>
+            🛒 ShopHere Admin Panel
+        </h1>
+
+        <p>
+            Administrator Dashboard
+        </p>
+    <p>
+        Monitor orders, manage deliveries
+        and track store performance
+    </p>
+    </div>
 
 </nav>
+<div id="dashboardStats">
 
+    <div class="stat-card">
+
+        <h3>📦 Total Orders</h3>
+
+        <h2 id="totalOrders">0</h2>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h3>🚚 Pending</h3>
+
+        <h2 id="pendingOrders">0</h2>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h3>✅ Shipped</h3>
+
+        <h2 id="shippedOrders">0</h2>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h3>💰 Revenue</h3>
+
+        <h2 id="totalRevenue">₹0</h2>
+
+    </div>
+
+</div>
+<div class="admin-actions">
+
+    <button onclick="showAddProductForm()">
+
+        ➕ Add Product
+
+    </button>
+    
+</div>
+
+<div id="productForm"></div>
+
+<div id="adminProducts"></div>
+<div class="admin-filters">
+
+    <input
+        id="searchOrder"
+        placeholder="Search Customer"
+        onkeyup="searchOrders()">
+
+    <select
+        id="statusFilter"
+        onchange="filterOrders()">
+
+        <option value="ALL">
+            All Orders
+        </option>
+
+        <option value="PENDING">
+            Pending
+        </option>
+
+        <option value="SHIPPED">
+            Shipped
+        </option>
+
+        <option value="DELIVERED">
+            Delivered
+        </option>
+
+    </select>
+    <button
+    onclick="clearAdminFilters()">
+
+    Clear Filters
+
+</button>
+</div>
 <h2 class="title">
 
     Admin Orders
