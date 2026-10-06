@@ -649,26 +649,55 @@ transform:translateY(-2px);
 .hero-content{
 
     background:
-        rgba(
-            255,255,255,
-            0.04
-        );
+        rgba(255,255,255,0.05);
 
     border:
-        1px solid rgba(
-            255,255,255,
-            0.08
-        );
+        1px solid rgba(255,255,255,0.12);
 
     border-radius:25px;
 
-    padding:50px;
+    padding:50px 70px;
 
-    backdrop-filter:
-        blur(12px);
+    backdrop-filter:blur(12px);
 
-    max-width:700px;
+    max-width:650px;
+
+    min-height:220px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+text-align:center;
 }
+.hero-content button{
+
+    width:180px;
+
+    margin-top:0;
+}
+.hero-content p{
+
+    margin:0 0 20px;
+
+    font-size:22px;
+
+    color:#e2e8f0;
+}
+.hero-content h1{
+
+    margin:0 0 15px 0;
+
+    font-size:50px;
+
+    line-height:1.1;
+
+    color:white;
+}
+
 #adminOrders{
 
     display:grid;
