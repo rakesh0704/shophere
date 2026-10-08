@@ -1,63 +1,33 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
+     <head>
+         <meta charset="UTF-8"> 
+         <title>Login</title> 
+         <link rel="stylesheet" href="style.css"> 
+        </head> 
+        <body>
+             <div id="toast">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-
-    <link rel="stylesheet" href="style.css">
-
-</head>
-
-<body>
-<div id="toast"></div>
-<nav>
-
-    <h2>🛒 ShopHere</h2>
-
-</nav>
-
-<div class="auth-container">
-
-    <div class="auth-box">
-
-
-    <h2>
-    🔐 Login
-</h2>
-
-    <input
-        type="email"
-        id="loginEmail"
-        placeholder="Email">
-
-    <input
-        type="password"
-        id="loginPassword"
-        placeholder="Password">
-
-    <button onclick="loginUser()">
-        Login
-    </button>
-
-    <p>
-
-    Don't have an account?
-
-    <a href="register.html">
-
-        Register
-
-    </a>
-
-</p>
-</div>
-</div>
-<script>
-    redirectIfLoggedIn();
-</script>
-<script src="app.js"></script>
-
-</body>
-
-</html>
+             </div>
+              <nav> 
+                <h2>🛒 ShopHere</h2>
+             </nav> 
+             <div class="auth-container">
+                 <div class="auth-box">
+                     <h2>🔐 Login</h2>
+                      <input type="email" id="loginEmail" placeholder="Email"> 
+                      <input type="password" id="loginPassword" placeholder="Password">
+                       <span id="loginError" style="color:#ef4444;font-size:14px;font-weight:600;display:block;margin-top:8px;margin-bottom:15px;">
+                         </span> 
+                         <button onclick="loginUser()"> Login </button>
+                          <p> 
+                            Don't have an account? 
+                            <a href="register.html"> Register </a>
+                         </p> 
+                        </div> 
+                        </div> 
+                        <script> redirectIfLoggedIn();
+                         </script>
+                          <script src="app.js"></script>
+                          </body>
+                           </html>

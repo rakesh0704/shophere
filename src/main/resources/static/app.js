@@ -1273,28 +1273,53 @@ function checkLoginStatus(){
 async function loginUser() {
 
     const email =
-        document.getElementById("loginEmail").value;
+        document.getElementById(
+            "loginEmail"
+        ).value;
 
     const password =
-        document.getElementById("loginPassword").value;
+        document.getElementById(
+            "loginPassword"
+        ).value;
 
-    const response = await fetch(
-        "/api/auth/login",
-        {
-            method:"POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify({
-                email,
-                password
-            })
-        }
-    );
+    const loginError =
+        document.getElementById(
+            "loginError"
+        );
 
-    const data = await response.json();
+    loginError.innerText = "";
 
-    if(response.ok){
+    const response =
+        await fetch(
+            "/api/auth/login",
+            {
+                method:"POST",
+                headers:{
+                    "Content-Type":
+                    "application/json"
+                },
+                body:JSON.stringify({
+                    email,
+                    password
+                })
+            }
+        );
+
+    if(!response.ok){
+
+        loginError.innerText =
+            "❌ Invalid Email Or Password";
+
+        showToast(
+            "❌ Invalid Email Or Password",
+            "error"
+        );
+
+        return;
+    }
+
+    const data =
+        await response.json();
 
     localStorage.setItem(
         "token",
@@ -1305,30 +1330,27 @@ async function loginUser() {
         "email",
         email
     );
+
     localStorage.setItem(
-    "username",
-    data.username
-);
-localStorage.setItem(
-    "userEmail",
-    data.email
-);
+        "username",
+        data.username
+    );
+
+    localStorage.setItem(
+        "userEmail",
+        data.email
+    );
 
     showToast(
-    "✅ Login Successful"
-);
+        "✅ Login Successful"
+    );
 
-setTimeout(() => {
+    setTimeout(() => {
 
-    window.location.href =
-        "products.html";
+        window.location.href =
+            "products.html";
 
-}, 1500);
-
-
-    window.location.href =
-        "products.html";
-}
+    },1500);
 }
 
 function logout(){
