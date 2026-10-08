@@ -90,6 +90,7 @@ if(
 
 checkLoginStatus();
 showAdminButton();
+loadProfile();
 
 if(typeof loadProfile === "function"){
 
@@ -104,7 +105,24 @@ const passwordField =
     document.getElementById(
         "regPassword"
     );
+const updateBtn =
+    document.getElementById(
+        "updateProfileBtn"
+    );
 
+if(updateBtn){
+
+    updateBtn.addEventListener(
+        "click",
+        function(){
+
+            document.getElementById(
+                "profileForm"
+            ).style.display =
+                "block";
+        }
+    );
+}
 if(passwordField){
 
     passwordField.addEventListener(
@@ -137,6 +155,174 @@ if(passwordField){
             }
         }
     );
+}
+function updateProfile(){
+
+    const phone =
+        document.getElementById(
+            "phoneInput"
+        ).value.trim();
+
+    const address =
+        document.getElementById(
+            "addressInput"
+        ).value.trim();
+
+    const phoneError =
+        document.getElementById(
+            "phoneError"
+        );
+
+    phoneError.innerText = "";
+
+    if(
+        !/^[6-9][0-9]{9}$/
+        .test(phone)
+    ){
+
+        phoneError.innerText =
+            "Please enter a valid Indian mobile number";
+
+        return;
+    }
+
+    if(
+        address.length < 5
+    ){
+
+        showToast(
+            "Please enter a valid address",
+            "warning"
+        );
+
+        return;
+    }
+
+    localStorage.setItem(
+        "customerPhone",
+        phone
+    );
+
+    localStorage.setItem(
+        "customerAddress",
+        address
+    );
+
+    showToast(
+        "Profile Updated Successfully",
+        "success"
+    );
+
+    setTimeout(
+        function(){
+
+            window.location.href =
+                "profile.html";
+
+        },
+        1500
+    );
+}
+function saveProfile(){
+
+    const phone =
+        document.getElementById(
+            "phoneInput"
+        ).value;
+
+    const address =
+        document.getElementById(
+            "addressInput"
+        ).value;
+
+    localStorage.setItem(
+        "customerPhone",
+        phone
+    );
+
+    localStorage.setItem(
+        "customerAddress",
+        address
+    );
+
+    document.getElementById(
+        "profilePhone"
+    ).innerText =
+        phone;
+
+    document.getElementById(
+        "profileAddress"
+    ).innerText =
+        address;
+
+    alert(
+        "Profile Updated Successfully"
+    );
+}
+function loadProfile(){
+
+    const username =
+        localStorage.getItem(
+            "username"
+        );
+
+    const email =
+        localStorage.getItem(
+            "customerEmail"
+        );
+
+    const phone =
+        localStorage.getItem(
+            "customerPhone"
+        );
+
+    const address =
+        localStorage.getItem(
+            "customerAddress"
+        );
+
+    if(
+        document.getElementById(
+            "profileUsername"
+        )
+    ){
+
+        document.getElementById(
+            "profileUsername"
+        ).innerText =
+            username || "Not Available";
+
+        document.getElementById(
+    "profileEmail"
+).innerText =
+    localStorage.getItem(
+        "userEmail"
+    ) || "Not Available";
+
+        document.getElementById(
+    "profilePhone"
+).innerText =
+
+    localStorage.getItem(
+        "customerPhone"
+    )
+
+    ||
+
+    "Not Available";
+
+        document.getElementById(
+    "profileAddress"
+).innerText =
+
+    localStorage.getItem(
+        "customerAddress"
+    )
+
+    ||
+
+    "Not Available";
+    }
 }
 async function loadProductDetails(){
 
@@ -1122,6 +1308,10 @@ async function loginUser() {
     localStorage.setItem(
     "username",
     data.username
+);
+localStorage.setItem(
+    "userEmail",
+    data.email
 );
 
     showToast(

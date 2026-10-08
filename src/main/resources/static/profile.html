@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>My Profile</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2>🛒 ShopHere</h2>
+
+    <div>
+
+        <button onclick="window.location.href='products.html'">
+
+            Products
+
+        </button>
+
+        <button onclick="logout()">
+
+            Logout
+
+        </button>
+
+    </div>
+
+</nav>
+
+<div class="auth-container">
+
+    <div class="profile-card">
+
+        <div
+            style="
+            display:flex;
+            justify-content:
+            space-between;
+            align-items:center;
+            margin-bottom:30px;">
+
+            <h2
+                style="
+                margin:0;">
+
+                My Profile
+
+            </h2>
+
+            <button
+                onclick="
+                window.location.href=
+                'update-profile.html'
+                ">
+
+                Update Profile
+
+            </button>
+
+        </div>
+
+        <div class="profile-item">
+
+            <strong>👤 Username</strong>
+
+            <span id="profileUsername"></span>
+
+        </div>
+
+        <div class="profile-item">
+
+            <strong>📧 Email</strong>
+
+            <span id="profileEmail"></span>
+
+        </div>
+
+        <div class="profile-item">
+
+            <strong>📱 Phone</strong>
+
+            <span id="profilePhone"></span>
+
+        </div>
+
+        <div class="profile-item">
+
+            <strong>🏠 Address</strong>
+
+            <span id="profileAddress"></span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
