@@ -214,3 +214,4 @@ GitHub: https://github.com/rakesh0704
 ## ⭐ Project Summary
 
 ShopHere is a complete full-stack e-commerce application built with Spring Boot and MySQL, featuring secure authentication, product catalog management, cart functionality, wishlist management, order processing, and a responsive multi-page user interface.
+Jenkins CI Integration - Testing automatic builds through GitHub commits.
